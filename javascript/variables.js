@@ -54,6 +54,13 @@ let x;//get an error as let variables do not support hoisting.same for const
     var:allowed
     let:allowed
     const:not allowed*/
+var v1 = 1;
+v1 = 30;
+console.log(v1);
+
+const v1 = 1;
+v1 = 30;
+console.log(v1);//error
 
 /*Redeclaration of the variable
     var:allowed
