@@ -108,7 +108,6 @@ function outside() {
   }
   return inside;
 }
-
 console.log(outside()(10)); // 20 (instead of 10)
 /*The name conflict happens at the statement return x * 2 and is between inside's parameter x and outside's variable x. 
 The scope chain here is {inside, outside, global object}. 
@@ -128,9 +127,6 @@ Therefore, inside's x takes precedences over outside's x, and 20 (inside's x) is
   let secondVariable;
 })(); // firstVariable and secondVariable will be discarded after the function is executed.
 
-//The primary benefit of self-invoking functions is that they execute only once and won’t fill the global namespace 
-/*After the function has been initialized, it is being immediately invoked and it’s executed only once as after the 
-execution we’ll lose the reference to the function.*/
 
 /*A self-invoking function can have variables and methods but they cannot be accessed from outside of it.
 To access them, the global window object has to be passed as a parameter.*/
