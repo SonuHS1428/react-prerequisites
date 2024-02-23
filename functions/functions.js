@@ -120,9 +120,18 @@ Therefore, inside's x takes precedences over outside's x, and 20 (inside's x) is
 (function(){
     console.log("This function is called immediately");
 })();
+
+//Avoid polluting global namespace:If we have some initiation code that we don't need to use again, we could use the IIFE pattern.
+(() => {
+  // some initiation code
+  let firstVariable;
+  let secondVariable;
+})(); // firstVariable and secondVariable will be discarded after the function is executed.
+
 //The primary benefit of self-invoking functions is that they execute only once and won’t fill the global namespace 
 /*After the function has been initialized, it is being immediately invoked and it’s executed only once as after the 
 execution we’ll lose the reference to the function.*/
+
 /*A self-invoking function can have variables and methods but they cannot be accessed from outside of it.
 To access them, the global window object has to be passed as a parameter.*/
 (function(window){
