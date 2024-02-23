@@ -55,3 +55,61 @@ function myFunction() {
 }
 
 // code here can NOT use carName
+
+
+//Recursion(A function that calls itself is called a recursive function.)
+
+function loop(x) {
+  // "x >= 10" is the exit condition (equivalent to "!(x < 10)")
+  if (x >= 10) {
+    return;
+  }
+  // do stuff
+  loop(x + 1); // the recursive call
+}
+loop(0);
+
+//Nested functions(a nested function can "inherit" the arguments and variables of its containing function. 
+
+/*The inner function can be accessed only from statements in the outer function.
+The inner function forms a closure: the inner function can use the arguments and variables of the outer function,
+while the outer function cannot use the arguments and variables of the inner function.*/
+function addSquares(a, b) {
+  function square(x) {
+    return x * x;
+  }
+  return square(a) + square(b);
+}
+
+console.log(addSquares(2, 3)); // 13
+console.log(addSquares(3, 4)); // 25
+console.log(addSquares(4, 5)); // 41
+
+//multiple Nested functions
+function A(x) {
+  function B(y) {
+    function C(z) {
+      console.log(x + y + z);
+    }
+    C(3);
+  }
+  B(2);
+}
+A(1); // Logs 6 (which is 1 + 2 + 3) 
+/*A function (A) contains a function (B), which itself contains a function (C).
+Both functions B and C form closures here. So, B can access A, and C can access B*/
+
+//name conflict(When two arguments or variables in the scopes of a closure have the same name, there is a name conflict.)
+//the innermost scope takes the highest precedence, while the outermost scope takes the lowest. 
+function outside() {
+  const x = 5;
+  function inside(x) {
+    return x * 2;
+  }
+  return inside;
+}
+
+console.log(outside()(10)); // 20 (instead of 10)
+/*The name conflict happens at the statement return x * 2 and is between inside's parameter x and outside's variable x. 
+The scope chain here is {inside, outside, global object}. 
+Therefore, inside's x takes precedences over outside's x, and 20 (inside's x) is returned instead of 10 (outside's x).*/
