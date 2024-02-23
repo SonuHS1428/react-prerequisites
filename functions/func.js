@@ -113,3 +113,26 @@ console.log(outside()(10)); // 20 (instead of 10)
 /*The name conflict happens at the statement return x * 2 and is between inside's parameter x and outside's variable x. 
 The scope chain here is {inside, outside, global object}. 
 Therefore, inside's x takes precedences over outside's x, and 20 (inside's x) is returned instead of 10 (outside's x).*/
+
+
+//A self-invoking function: is a nameless (anonymous) function that is invoked immediately after its definition.
+//An anonymous function is enclosed inside a set of parentheses followed by another set of parentheses (), which does the execution.
+(function(){
+    console.log("This function is called immediately");
+})();
+//The primary benefit of self-invoking functions is that they execute only once and won’t fill the global namespace 
+/*After the function has been initialized, it is being immediately invoked and it’s executed only once as after the 
+execution we’ll lose the reference to the function.*/
+/*A self-invoking function can have variables and methods but they cannot be accessed from outside of it.
+To access them, the global window object has to be passed as a parameter.*/
+(function(window){
+    var pi = 3.141;
+    function e() {
+	return Math.E;
+    }
+    
+    window.pi = pi;
+    window.e = e;
+})(window);
+/*a self-invoking function below, containing the variable pi and the function e(). A global window object is passed
+and both pi and e() are assigned to the global variables window.pi and window.e respectively*/
