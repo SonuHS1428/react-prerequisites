@@ -24,11 +24,11 @@ person.introduceSelf();
 person.age;
 person.bio();
 //object as object properties,An object property can itself be an object. For example,
-const person = {
+const persons = {
     name: ["Bob", "Smith"],
   };
 //try changing the name member 
-const person= {
+const personS= {
     name: {
       first: "Bob",
       last: "Smith",
