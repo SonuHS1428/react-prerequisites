@@ -101,7 +101,7 @@ let arr = [10, 20, 30, 40, 50, 60];
 // Callback function for reduce method
 function sumofArray(sum, num) {
     return sum + num;
-}
+}/*A callback is a function that is passed as an argument to another function & is called after the main fun has finished its execution.
 //Fucntion to execute reduce method 
 function myGeeks(item) {
     // Display output
