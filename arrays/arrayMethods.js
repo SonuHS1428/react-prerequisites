@@ -60,13 +60,52 @@ console.log(Array.of("Ram", "Geeta"));//Array ["Ram", "Geeta"]
  console.log(arr.at(index2));//21
 
 //Javascript concat() Method
+//Combine two or more arrays using the concat() method. Ir returns new array containing joined arrays elements.
 
+// Creating an Array and Initializing with Values
+let courses = ["HTML", "CSS", "JavaScript", "React"];
+let otherCourses = ["Node.js", "Expess.js"];
+ 
+// Concatenate both arrays
+let concateArray = courses.concat(otherCourses);
+ 
+console.log("Concatenated Array: ", concateArray);// [ 'HTML', 'CSS', 'JavaScript', 'React', 'Node.js', 'Expess.js' ]
 
-    let num1 = [11, 12, 13],
-        num2 = [14, 15, 16],
-        num3 = [17, 18, 19];
-    console.log(num1.concat(num2, num3));
+//filter() method
+/*JavaScript Array filter() Method is used to create a new array from a given array consisting of only those elements from 
+the given array that satisfy a condition set by the argument method.*/
+
+function isPositive(value) {
+    return value > 0;
 }
-func();
+ 
+let filtered = [112, 52, 0, -1, 944].filter(isPositive);
+console.log(filtered);//[112,52,944]
+//method filter() creates a new array consisting of only those elements that satisfy the condition checked by isPositive() function.
 
+//map() method
+//JavaScript map() method iterates over an array, applying a callback function to each element, and returns a new array with the results
 
+const numbers = [1, 4, 9, 16, 25];
+const squareRoots = numbers.map(num => Math.sqrt(num));
+ 
+console.log(squareRoots); // Output: [1, 2, 3, 4, 5]
+// the map() method to create a new array containing the square roots of each number in the original array.
+
+//reduce() method
+/*The Javascript arr.reduce() method in JavaScript is used to reduce the array to a single value and executes a provided function
+for each value of the array (from left to right) and the return value of the function is stored in an accumulator. */
+
+// Input array
+let arr = [10, 20, 30, 40, 50, 60];
+// Callback function for reduce method
+function sumofArray(sum, num) {
+    return sum + num;
+}
+//Fucntion to execute reduce method 
+function myGeeks(item) {
+    // Display output
+    console.log(arr.reduce(sumofArray));
+}
+myGeeks();//210
+//This example uses reduce() method to return the sum of all array elements.
