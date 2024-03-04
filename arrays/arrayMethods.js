@@ -123,7 +123,7 @@ courses.unshift("Web Development");
  
 console.log(courses);//[ 'Web Development', 'HTML', 'CSS', 'Javascript', 'React', 'Node.js' ]
 
-//pop(), shift(), or splice().
+//pop(), shift()
 
 // Creating an Array and Initializing with Values
 let courses = ["HTML", "CSS", "Javascript", "React", "Node.js"];
