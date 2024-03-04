@@ -109,3 +109,30 @@ function myGeeks(item) {
 }
 myGeeks();//210
 //This example uses reduce() method to return the sum of all array elements.
+
+//push() and unshift() methods
+
+// Creating an Array and Initializing with Values
+let courses = ["HTML", "CSS", "Javascript", "React"];
+ 
+// Add Element to the end of Array
+courses.push("Node.js");
+ 
+// Add Element to the beginning
+courses.unshift("Web Development");
+ 
+console.log(courses);//[ 'Web Development', 'HTML', 'CSS', 'Javascript', 'React', 'Node.js' ]
+
+//4.pop(), shift(), or splice().
+
+// Creating an Array and Initializing with Values
+let courses = ["HTML", "CSS", "Javascript", "React", "Node.js"];
+console.log("Original Array: " + courses);
+ 
+// Removes and returns the last element
+let lastElement = courses.pop();
+console.log("After Removed the last elements: " + courses);//HTML,CSS,Javascript,React
+ 
+// Removes and returns the first element
+let firstElement = courses.shift();
+console.log("After Removed the First elements: " + courses);//CSS,Javascript,React
