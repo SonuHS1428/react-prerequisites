@@ -123,7 +123,7 @@ courses.unshift("Web Development");
  
 console.log(courses);//[ 'Web Development', 'HTML', 'CSS', 'Javascript', 'React', 'Node.js' ]
 
-//4.pop(), shift(), or splice().
+//pop(), shift(), or splice().
 
 // Creating an Array and Initializing with Values
 let courses = ["HTML", "CSS", "Javascript", "React", "Node.js"];
@@ -136,3 +136,43 @@ console.log("After Removed the last elements: " + courses);//HTML,CSS,Javascript
 // Removes and returns the first element
 let firstElement = courses.shift();
 console.log("After Removed the First elements: " + courses);//CSS,Javascript,React
+
+//toString() method
+//We have a builtin method toString() to converts an array to a string
+
+// Creating an Array and Initializing with Values
+let courses = ["HTML", "CSS", "JavaScript", "React"];
+ 
+// Convert array ot String
+console.log(courses.toString());//Output:HTML,CSS,JavaScript,React
+
+//Iterating Through Array Elements
+//We can iterate array and access array elements using for and forEach loop.
+
+// Creating an Array and Initializing with Values
+let courses = ["HTML", "CSS", "JavaScript", "React"];
+// Iterating through for loop
+for (let i = 0; i < courses.length; i++) {
+    console.log(courses[i])
+}
+/*Output
+HTML
+CSS
+JavaScript
+React */
+
+// Creating an Array and Initializing with Values
+let courses = ["HTML", "CSS", "JavaScript", "React"];
+// Iterating through forEach loop
+courses.forEach(function myfunc(elements) {
+    console.log(elements);
+});
+/*Output
+HTML
+CSS
+JavaScript
+React */
+
+
+
+
