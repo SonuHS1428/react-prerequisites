@@ -1,3 +1,7 @@
+//ARRAY METHODS(static and instance methods)
+
+//Static methods(If the method is called using the array class itself then it is called a static method.)
+
 //JavaScript Array from() Method
 //The JavaScript Array from() method returns an Array object from any object with a length property or an iterable object.
 
@@ -43,6 +47,8 @@ Output: Array [10, 20, 30]
 containing the same argument shown in the output.*/
 console.log(Array.of("Ram", "Geeta"));//Array ["Ram", "Geeta"]
 
+//Instance methods(If the method is called on an instance of a array then it is called an instance method.)
+
 //Javascript Array at() Method
 /*The JavaScript Array at() method takes an integer value (index) as a parameter and returnsthe element of that index. 
  It allows positive and negative integers. For the negative integer, it counts back from the last element in the array. */
@@ -52,3 +58,15 @@ console.log(Array.of("Ram", "Geeta"));//Array ["Ram", "Geeta"]
  console.log(arr.at(index));//21
  const index2=-1;
  console.log(arr.at(index2));//21
+
+//Javascript concat() Method
+
+
+    let num1 = [11, 12, 13],
+        num2 = [14, 15, 16],
+        num3 = [17, 18, 19];
+    console.log(num1.concat(num2, num3));
+}
+func();
+
+
