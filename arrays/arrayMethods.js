@@ -173,6 +173,22 @@ CSS
 JavaScript
 React */
 
+/*The arr.forEach() method calls the provided function once for each element of the array. 
+The provided function may perform any kind of operation on the elements of the given array.*/
+// JavaScript to illustrate forEach() method
+function func() {
+ 
+  // Original array
+  const items = [1, 29, 47];
+  const copy = [];
+  items.forEach(function (item) {
+    copy.push(item * item);
+  });
+  console.log(copy);
+}
+func();//[ 1, 841, 2209 ]
+// the method forEach() calculates the square of every element of the array.
+
 
 
 
