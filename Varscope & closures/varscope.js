@@ -34,38 +34,30 @@ console.log(i);//an error as i is not defined
 
 
 /*Hoisting (means that we can define a variable before its declaration.)
-    var:allowed
-    let:not allowed
-    const:not allowed*/
+    var declarations are hoisted
+    let and const are also hoisted but they are differently hoisted from var declarations*/
+
 x = 8; 
 console.log(x);
 var x;//there is no error and that we can declare var variables after defining them.
 
-x = 8; 
-console.log(x);
-let x;//get an error as let variables do not support hoisting.same for const
+console.log(b);
+let a= 8; 
+var b=100;//100
+
+console.log(a);
+let a= 8; 
+var b=100;//get a reference error
+
+/*Because let & const are in temporal dead zone for the time being
+     temporal dead zone is the time from hoisting(i.e variable getting memory space)to initializing some values to the variables*/
+/*the variable declared with var are in global space where let and const are not in global space
+    in case of let and const ,they are allocated a memory but they are stored in a diff mem space than global
+        so that u can't access those let and const declarations before u putting some values*/
+/*whenever u try to access a variable inside temporal dead zone,it gives u a reference error
+     in the above example,we are initializing the value for a variable i.e let a=8 at line2 ,so before to that line2 all code 
+        is acts as a temporary dead zone.*/
 
 
-/*Reassign the value
-    var:allowed
-    let:allowed
-    const:not allowed*/
-var v1 = 1;
-v1 = 30;
-console.log(v1);
 
-const v1 = 1;
-v1 = 30;
-console.log(v1);//error
 
-/*Redeclaration of the variable
-    var:allowed
-    let:not allowed
-    const:not allowed*/
-var v1 = 1;
-var v1 = 30;
-console.log(v1);//30,there is no error 
-
-let v1 = 1;
-let v1 = 30;
-console.log(v1);//get an error as the let and const variables do not allow you to redeclare them again.
