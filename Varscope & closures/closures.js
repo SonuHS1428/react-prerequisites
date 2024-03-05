@@ -1,3 +1,46 @@
+//SCOPE CHAIN AND LEXICAL ENVIRONMENT
+
+/*wkt whenever we run a js program,an execution context is created..along with execution context the lexical environment is also created
+     the word lexical means in heirarchy or in sequence
+        lexical environment = local memory + lexical environment of its parent*/
+function a(){
+ var b=10;
+ c();
+ function c(){
+  console.log(b);//10
+ }
+}
+a();
+console.log(b);
+/* here in above example c is lexically sitting inside a and a is lexically inside global scope
+        the lexical environment of c() = its memory space(where the var and fun are stored) + lexical environment of its parent i.e a
+        the lexical environment of a() = its memory space(where the var and fun are stored) + lexical environment of its parent i.e global
+        the lexical environment of global = its memory space(where the var and fun are stored) + reference to outer environment i.e to null 
+          bcz it has no parent*/
+/*SCOPE CHAIN:The chain of all lexical environment & parent references*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 //closures in javascript
 /*a closure is a combination of a function and the lexical environment within which that function was declared.
  This lexical environment consists of any local variables that were in scope at the time of the closure's creation.*/
