@@ -39,9 +39,9 @@ x();
 function x(){
   var a=10;
   function y(){
-    console.log(a);//10
+    console.log(a);
   }
-return y;
+  return y;
 }
 var z=x();
 console.log(z);/*   y(){
@@ -51,6 +51,72 @@ console.log(z);/*   y(){
 ...........
 ...........*/
 z();//10
+
+/*when u are returning y i.e when u invoke x() it will returns y to the place where it invoked 
+      and when we are trying to see what will be the returned value of this function call,we get the fun y
+          and we know after returning the y,the function is vanished i.e x's EC is no longer presentin the call stack*/
+/*suppose we have some lines of code here,and at some point of time if we call the function z()
+      wkt z contains the function y,but x&y's EC are no longer available..so that we may think func z() can't access value of a
+          but it will print 10 as output,bcz when func is returned from func,not just the fun code is returned but the
+          closure(func + its lexical environment) will be returned..z will remembers the reference to the a th memory location*/
+
+function x(){
+  var a=10;
+  function y(){
+    console.log(a);
+  }
+  a=100;
+  return y;
+}
+var z=x();
+console.log(z);
+z();//100
+
+/*here,z has the reference to the variable a,not to just the value of a
+     so that func z remebers the reference to that variable a*/
+
+function z(){                                    
+  var b=900;
+  function x(){
+       var a=7;
+       function y(){
+          console.log(a,b);
+       }
+       y();
+  }
+  x();
+}
+z();//7 900
+
+/*Here when we run the above code ,we get o/p as 7 900..where y has the reference to both lexical environment of its parents i.e x and z
+         SCOPE
+         closure(x)
+           a:7
+         closure(z)
+           b:900   */
+
+
+//setTimeout() + closures
+function x(){
+     var i=1;
+     setTimeout (function(){
+          console.log(i);
+     },3000);
+     console.log("hello");
+}
+x();/*hello
+      1
+
+/* here that callback function forms a closure..that function remembers reference to i and forms a closure..whenever this func goes it 
+         takes the reference of i with that*/
+/*setTimeout takes the callback function and stores it in some place and attached a timer to it.once the timer expired i.e here 3000msec
+      are done..then it takes that func and puts into call stack and runs it..*/
+/* and mainly js doesnot wait at that point of time..it will keep executing the other code ...here in this example..first hello get printed 
+       after 3000msec over the value of i is printed...*/
+
+
+
+
 
 
 
