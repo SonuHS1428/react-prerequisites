@@ -20,6 +20,41 @@ console.log(b);
 /*SCOPE CHAIN:The chain of all lexical environment & parent references*/
 
 
+//CLOSURES
+
+function x(){
+  var a=10;
+  function y(){
+    console.log(a);//10
+  }
+  y();
+}
+x();
+/*As we know thw concept of lexical environment and scope chain,when u are trying to access the value of b inside fun y,
+      js engine first tries to find a in local memory of y and it does't find it,
+           then it goes to its lexical parent there it find x,hence print the value 10*/
+//and this is what the closure is...CLOSURE is a function bundled with its lexical environment
+
+//the existence of CLOSURE concept when we returning a function from a function
+function x(){
+  var a=10;
+  function y(){
+    console.log(a);//10
+  }
+return y;
+}
+var z=x();
+console.log(z);/*   y(){
+                     console.log(a);
+                    }
+/*.........
+...........
+...........*/
+z();//10
+
+
+
+
 
 
 
