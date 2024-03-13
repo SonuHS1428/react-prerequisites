@@ -44,7 +44,7 @@ handlePromise();//promise resolved value!!
  that has to be resolved now val will contain the value of resolved promise 
       and this is how you handle promises using async and await*/
 
-/*let us take a real world example of a sync away that is making an API call using fetch()
+/*let us take a real world example of async await that is making an API call using fetch()
  that is the function given by the browser not by the JavaScript */
 
 const API_URL="https://api.github.com/users/sonuHS1428";//github user url
