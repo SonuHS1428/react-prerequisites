@@ -47,7 +47,7 @@ handlePromise();//promise resolved value!!
 /*let us take a real world example of a sync away that is making an API call using fetch()
  that is the function given by the browser not by the JavaScript */
 
-const API_URL="https://api.github.com/users/sonuHS1428"//github user url
+const API_URL="https://api.github.com/users/sonuHS1428";//github user url
 async function handlePromise(){
   const data=await fetch(API_URL);
   const jsonValue=await data.json();
